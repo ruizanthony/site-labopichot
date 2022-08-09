@@ -1,7 +1,6 @@
 import * as React from "react"
-import {StaticImage} from "gatsby"
 
-const  CreationMoule = () => {
+const  CreationProduits = () => {
     
     // <StaticImage />
     return (
@@ -24,3 +23,5 @@ const  CreationMoule = () => {
         </Layout>
     )
 }
+
+export default CreationProduits
