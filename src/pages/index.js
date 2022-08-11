@@ -1,10 +1,9 @@
 import * as React from "react"
-import { Link } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
+import { StaticImage } from "gatsby-plugin-image"
+import Layout from "../components/Layout"
 import Seo from "../components/seo"
-import * as styles from "../components/index.module.css"
+import * as styles from "./index.module.css"
 
 const utmParameters = `?utm_source=site-labopichot&utm_medium=accueil`
 
@@ -28,8 +27,14 @@ const links = [
 ]
 
 const moreLinks = [
-  { text: "Linkedin Labopichot", url: "https://www.linkedin.com/company/10460217/admin/" },
-  { text: "Blog packaging ecoresponsable", url: "https://packaging-ecoresponsable.com/" },
+  {
+    text: "Linkedin Labopichot",
+    url: "https://www.linkedin.com/company/10460217/admin/",
+  },
+  {
+    text: "Blog packaging ecoresponsable",
+    url: "https://packaging-ecoresponsable.com/",
+  },
 ]
 const IndexPage = () => (
   <Layout>
@@ -75,12 +80,14 @@ const IndexPage = () => (
  *
  * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
  */
-export const Head = () => <Seo title="Le packaging made in France"
-description="Le packaging, les flacons en plastique écoresponsables made in France. Creation de moules en interne. Le leader français du pack pour le complément alimentaire."
-image="/images/piluliersBio.jpg"
-pathname="/"
-// Boolean indicating whether this is an article:
-// article
-/>
+export const Head = () => (
+  <Seo
+    title="Le packaging made in France"
+    description="Le packaging, les flacons en plastique écoresponsables made in France. Creation de moules en interne. Le leader français du pack pour le complément alimentaire."
+    image="/images/piluliersBio.jpg"
+    // Boolean indicating whether this is an article:
+    // article
+  />
+)
 
 export default IndexPage
