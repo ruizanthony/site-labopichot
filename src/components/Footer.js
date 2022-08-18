@@ -1,11 +1,10 @@
-import React from "react";
-
-import * as styles from "./footer.module.css";
+import React from "react"
+import styles from "../constants/styles"
 
 const Footer = ({ siteTitle }) => (
-  <footer className={styles.colophon}>
+  <footer style={styles.center}>
     © {new Date().getFullYear()} {siteTitle}
   </footer>
-);
+)
 
-export default Footer;
+export default Footer

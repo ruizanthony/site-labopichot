@@ -2,13 +2,13 @@ import * as React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
-import Seo from "../components/seo"
-import * as styles from "./creations-produits.module.css"
+import Seo from "../components/Seo"
+import { Container, Box } from "@mui/material"
 
 const CreationProduits = () => {
   return (
     <Layout>
-      <div className={styles.textCenter}>
+      <Box display="flex" flexDirection="column" alignItems="stretch" padding={1}>>
         <StaticImage
           src="../images/natexpo.jpg"
           loading="eager"
@@ -21,7 +21,7 @@ const CreationProduits = () => {
         <h1>
           <b>Création de produits avec notre service moule intégré</b>
         </h1>
-      </div>
+      </Box>
       <div>
         Chez Laboratoires Pichot, nous partons toujours du vrai besoin client.
         Nos clients créent des gammes de produits cohérentes, pertinentes et

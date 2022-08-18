@@ -8,16 +8,12 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+// import { Container } from "theme-ui"
+
+import { Container, Box, Typography, Paper } from "@mui/material"
 
 import Header from "./Header"
 import Footer from "./Footer"
-
-// Styles
-// import "../styles/reset.css"
-// import "../styles/accessibility.css"
-// import "../styles/global.module.css"
-// import "../fonts/fonts.css"
-import * as styles from "./layout.module.css"
 
 const Layout = ({ children }) => {
   // Destructure query return down to site:
@@ -36,16 +32,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <a className="skip-link screen-reader-text" href="#primary">
-        Skip to the content
-      </a>
       <Header
         siteTitle={site.siteMetadata.title}
         siteDescription={site.siteMetadata.description}
       />
-      <main id="primary" className={styles.site_main}>
-        {children}
-      </main>
+      <Container p={4} variant="secondary">
+        <main id="primary">{children}</main>
+      </Container>
       <Footer siteTitle={site.siteMetadata.title} />
     </>
   )

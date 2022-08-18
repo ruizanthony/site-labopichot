@@ -2,8 +2,8 @@ import * as React from "react"
 
 import { StaticImage } from "gatsby-plugin-image"
 import Layout from "../components/Layout"
-import Seo from "../components/seo"
-import * as styles from "./index.module.css"
+import Seo from "../components/Seo"
+import { Box, Grid } from "@mui/material"
 
 const utmParameters = `?utm_source=site-labopichot&utm_medium=accueil`
 
@@ -38,33 +38,33 @@ const moreLinks = [
 ]
 const IndexPage = () => (
   <Layout>
-    <Seo title="Accueil" />
-    <div className={styles.textCenter}>
+    <Box display="flex" flexDirection="column" alignItems="stretch" padding={1}>
       <StaticImage
         src="../images/natexpo.jpg"
         loading="eager"
-        width={64}
+        width={300}
+        layout="constrained" // limit max to width=500
         quality={95}
         formats={["auto", "webp", "avif"]}
         alt=""
         style={{ marginBottom: `var(--space-3)` }}
       />
       <h1>
-        <b>Laboratoires Pichot</b>
+        Livraison en 3 semaines, plus de 1500 produits disponibles en standard,
+        creation de moules
       </h1>
-    </div>
-    <ul className={styles.list}>
-      {links.map(link => (
-        <li key={link.url} className={styles.listItem}>
-          <a
-            className={styles.listItemLink}
-            href={`${link.url}${utmParameters}`}
-          >
-            {link.text} ↗
-          </a>
-          <p className={styles.listItemDescription}>{link.description}</p>
-        </li>
-      ))}
+    </Box>
+    <ul>
+      <Grid container spacing={3}>
+        {links.map(link => (
+          <Grid item xs={12} sm={6} md={4} key={link.text}>
+            <li key={link.url}>
+              <a href={`${link.url}${utmParameters}`}>{link.text} ↗</a>
+              <p>{link.text}</p>
+            </li>
+          </Grid>
+        ))}
+      </Grid>
     </ul>
     {moreLinks.map((link, i) => (
       <React.Fragment key={link.url}>
@@ -75,11 +75,6 @@ const IndexPage = () => (
   </Layout>
 )
 
-/**
- * Head export to define metadata for the page
- *
- * See: https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
- */
 export const Head = () => (
   <Seo
     title="Le packaging made in France"

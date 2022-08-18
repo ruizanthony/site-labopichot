@@ -1,20 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title: `Lqborqtoires Pichot`,
+    title: `Laboratoires Pichot`,
     description: `Une entreprise française de fabrication de flacons en plastique ecoresponsables, qui intègre un service interne mouliste, situé dans le territoire Auvergne Rhone Alpes.`,
-    author: `Laboratoires Pichot`,
-    siteUrl: `https://sitelabopichot.gtsb.io/`
-    },
+    author: `labopichot`,
+    siteUrl: `https://sitelabopichot.gtsb.io/`,
+  },
   plugins: [
-    "gatsby-plugin-postcss",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
-    {
-      resolve: "gatsby-plugin-manifest",
-      options: {
-        icon: "src/images/iconPWA.png",
-      },
-    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -46,6 +39,7 @@ module.exports = {
         name: `labopichot`,
         short_name: `pichot`,
         start_url: `/`,
+        icon: "src/images/iconPWA.png",
         background_color: `#663399`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
@@ -54,5 +48,25 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`], // by default only mdx
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `articles`,
+        path: `${__dirname}/src/articles/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/articles`,
+      },
+    },
+    "gatsby-theme-material-ui"
   ],
 }
