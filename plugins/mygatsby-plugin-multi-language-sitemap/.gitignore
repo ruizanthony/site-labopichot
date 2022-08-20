@@ -1,0 +1,5 @@
+/__tests__
+yarn.lock
+.DS_Store
+node_modules
+public
