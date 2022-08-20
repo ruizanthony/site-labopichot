@@ -31,6 +31,6 @@ export const query = graphql`
   }
 `
 
-# <Trans>Notre Entreprise est locale et participe à l'économie circulaire</Trans>
+# <Trans>{props.pageContext.frontmatter.title}</Trans>
 
-<Trans>Paragraphe1.</Trans>
+<Trans>{props.pageContext.frontmatter.description}</Trans>

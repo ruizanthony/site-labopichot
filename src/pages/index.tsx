@@ -61,15 +61,21 @@ const IndexPage = () => {
   )
 }
 
-export const Head = () => (
-  <Seo
-    title="Le packaging made in France"
-    description="Le packaging, les flacons en plastique écoresponsables made in France. Creation de moules en interne. Le leader français du pack pour le complément alimentaire."
-    image="/images/piluliersBio.jpg"
-    // Boolean indicating whether this is an article:
-    // article
-  />
-)
+export const Head = ({ data }) => {
+  const { t } = useTranslation() // useTranslation doesnt seem to work with Head api
+  const locales = data.locales.edges[0].node.data
+  let obj = undefined
+  if (locales) {
+    obj = JSON.parse(locales)
+  }
+  return (
+    <Seo
+      title={obj?.IndexTitle}
+      description={obj?.IndexDescription}
+      image="/images/piluliersBio.jpg"
+    />
+  )
+}
 
 export default IndexPage
 

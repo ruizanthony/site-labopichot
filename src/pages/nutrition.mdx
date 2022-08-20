@@ -10,9 +10,9 @@ export default Layout
 import Seo from "../components/Seo"
 export const Head = props => (
   <Seo
-    title={props.pageContext.frontmatter?.title}
-    description={props.pageContext.frontmatter?.description}
-    image={props.pageContext.frontmatter?.image}
+    title={props.pageContext.frontmatter.title}
+    description={props.pageContext.frontmatter.description}
+    image={props.pageContext.frontmatter.image}
     article // Boolean indicating whether this is an article:
   />
 )
@@ -31,6 +31,6 @@ export const query = graphql`
   }
 `
 
-# <Trans>Flacons dédiés aux compléments alimentaires</Trans>
+# <Trans>{props.pageContext.frontmatter.title}</Trans>
 
-<Trans>Paragraphe1.</Trans>
+<Trans>{props.pageContext.frontmatter.description}</Trans>

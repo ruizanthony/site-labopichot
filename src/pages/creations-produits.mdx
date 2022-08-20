@@ -1,5 +1,5 @@
 ---
-title: "Creation de gammes de produits"
+title: "Création de produits avec notre service moule intégré"
 description: "Une de nos forces provient de notre service mouliste intégré. Nous créons les produits qui correspondent exactement aux fonctions, aux volumes, aux formes et aux matières qui maximisent la création de valeur pour votre produit, ce qui procure une attractivité à votre produit supérieure."
 image: "/images/example.png"
 ---
@@ -30,7 +30,9 @@ export const query = graphql`
   }
 `
 
-# Création de produits avec notre service moule intégré
+# <Trans>{props.pageContext.frontmatter.title}</Trans>
+
+<Trans>{props.pageContext.frontmatter.description}</Trans>
 
 Chez Laboratoires Pichot, nous partons toujours du vrai besoin client.
 

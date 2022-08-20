@@ -1,6 +1,6 @@
 ---
-title: "Contact"
-description: "Contactez les Laboratoires Pichot, votre expert packaging, de l'idée au flacon écoresponsable. Notre équipe d'expert(e)s en packaging vous guidera jusqu'au succès de votre projet de développement produit."
+title: "Contactez les Laboratoires Pichot"
+description: "Notre équipe d'expert(e)s en packaging vous guidera jusqu'au succès de votre projet de développement produit."
 image: "/images/example.png"
 ---
 import { Trans } from "gatsby-plugin-react-i18next"
@@ -31,9 +31,9 @@ export const query = graphql`
   }
 `
 
-# <Trans>Contactez les Laboratoires Pichot</Trans>
+# <Trans>{props.pageContext.frontmatter.title}</Trans>
 
-<Trans>Notre équipe commerciale est composée de 3 expert(e)s en packaging, qui vous guideront dans votre projet de développement produit.</Trans>
+<Trans>{props.pageContext.frontmatter.description}</Trans>
 
 <Trans>Avec plus de 30 ans d'expériences dans l'accompagnement de nos clients dans la création de produit et de gammes pertinentes pour les compléments alimentaires, ..., notre valeur ajoutée est de vous conseiller le bon flacon, la bonne matière, le bon bouchage, adapté à votre besoin et en maximisant l'écoresponsabilité de votre produit.</Trans>
 
