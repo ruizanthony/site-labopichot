@@ -1,0 +1,36 @@
+---
+title: "Cosmétiques"
+description: "Les flacons dédiés à la cosmétique"
+image: "/images/example.png"
+---
+import { Trans } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
+import Layout from "../components/Layout"
+export default Layout
+import Seo from "../components/Seo"
+export const Head = props => (
+  <Seo
+    title={props.pageContext.frontmatter?.title}
+    description={props.pageContext.frontmatter?.description}
+    image={props.pageContext.frontmatter?.image}
+    article // Boolean indicating whether this is an article:
+  />
+)
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
+
+# <Trans>Flacons dédiés à la cosmétique</Trans>
+
+<Trans>Paragraphe1.</Trans>

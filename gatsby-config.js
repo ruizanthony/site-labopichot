@@ -6,9 +6,63 @@ module.exports = {
     siteUrl: `https://flaconpet.com/`,
   },
   plugins: [
-    "gatsby-plugin-sitemap",
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/locales`,
+        name: `locale`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-react-i18next`,
+      options: {
+        localeJsonSourceName: `locale`,
+        languages: [`en`, `fr`],
+        defaultLanguage: `fr`,
+        // siteUrl: `https://flaconpet.com/`,
+        siteUrl: "http://localhost:8000/",
+        i18nextOptions: {
+          interpolation: {
+            escapeValue: false,
+          },
+          keySeparator: false,
+          nsSeparator: false,
+        },
+        pages: [
+          {
+            matchPath: "/:lang?/article/:uid",
+            getLanguageFromPath: true,
+            excludeLanguages: ["es"],
+          },
+          {
+            matchPath: "/preview",
+            languages: ["fr"],
+          },
+        ],
+      },
+    },
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: `mygatsby-plugin-multi-language-sitemap`,
+      options: {
+        output: "/",
+        query: `
+          query {
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        langs: ["en", "de", "fr", "es", "zh-Hant", "zh-Hans"],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

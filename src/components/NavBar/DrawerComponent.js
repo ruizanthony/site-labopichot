@@ -9,10 +9,11 @@ import {
   IconButton,
   Link,
 } from "gatsby-theme-material-ui"
+import { useI18next, useTranslation } from "gatsby-plugin-react-i18next"
 
 import MenuIcon from "@mui/icons-material/Menu"
 
-function DrawerComponent({ menuLinks }) {
+function DrawerComponent({ menuLinks, t }) {
   const [openDrawer, setOpenDrawer] = useState(false)
   return (
     <>
@@ -29,7 +30,7 @@ function DrawerComponent({ menuLinks }) {
                       fontSize: "20px",
                     }}
                   >
-                    {link.text}
+                    {t(link.text)}
                   </Link>
                 </ListItemText>
               </ListItem>

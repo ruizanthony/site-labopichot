@@ -3,24 +3,39 @@ title: "Contact"
 description: "Contactez les Laboratoires Pichot, votre expert packaging, de l'idée au flacon écoresponsable. Notre équipe d'expert(e)s en packaging vous guidera jusqu'au succès de votre projet de développement produit."
 image: "/images/example.png"
 ---
-
+import { Trans } from "gatsby-plugin-react-i18next"
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 export default Layout
 import Seo from "../components/Seo"
 export const Head = props => (
   <Seo
-    title={props.pageContext.frontmatter.title}
-    description={props.pageContext.frontmatter.description}
-    image={props.pageContext.frontmatter.image}
+    title={props.pageContext.frontmatter?.title}
+    description={props.pageContext.frontmatter?.description}
+    image={props.pageContext.frontmatter?.image}
     article // Boolean indicating whether this is an article:
   />
 )
 
-# Contactez les Laboratoires Pichot
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
 
-Notre équipe commerciale est composée de 3 expert(e)s en packaging, qui vous guideront dans votre projet de développement produit.
+# <Trans>Contactez les Laboratoires Pichot</Trans>
 
-Avec plus de 30 ans d'expériences dans l'accompagnement de nos clients dans la création de produit et de gammes pertinentes pour les compléments alimentaires, ..., notre valeur ajoutée est de vous conseiller le bon flacon, la bonne matière, le bon bouchage, adapté à votre besoin et en maximisant l'écoresponsabilité de votre produit.
+<Trans>Notre équipe commerciale est composée de 3 expert(e)s en packaging, qui vous guideront dans votre projet de développement produit.</Trans>
+
+<Trans>Avec plus de 30 ans d'expériences dans l'accompagnement de nos clients dans la création de produit et de gammes pertinentes pour les compléments alimentaires, ..., notre valeur ajoutée est de vous conseiller le bon flacon, la bonne matière, le bon bouchage, adapté à votre besoin et en maximisant l'écoresponsabilité de votre produit.</Trans>
 
 Téléphone: 04 73 72 63 06
 email: contact@labopichot.com

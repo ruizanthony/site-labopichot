@@ -3,7 +3,7 @@ title: "Creation de gammes de produits"
 description: "Une de nos forces provient de notre service mouliste intégré. Nous créons les produits qui correspondent exactement aux fonctions, aux volumes, aux formes et aux matières qui maximisent la création de valeur pour votre produit, ce qui procure une attractivité à votre produit supérieure."
 image: "/images/example.png"
 ---
-
+import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 export default Layout
 import Seo from "../components/Seo"
@@ -15,6 +15,20 @@ export const Head = props => (
     article // Boolean indicating whether this is an article:
   />
 )
+
+export const query = graphql`
+  query ($language: String!) {
+    locales: allLocale(filter: { language: { eq: $language } }) {
+      edges {
+        node {
+          ns
+          data
+          language
+        }
+      }
+    }
+  }
+`
 
 # Création de produits avec notre service moule intégré
 

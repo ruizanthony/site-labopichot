@@ -13,30 +13,34 @@ const Footer = ({ siteTitle }) => (
         justifyContent: "center",
         flexFlow: "row wrap",
         px: "2rem",
+        color: "black",
       }}
     >
       <Box>
         © {new Date().getFullYear()} {siteTitle}
       </Box>
-      <Box>
+      <Link
+        to="https://fr.linkedin.com/company/laboratoires-industriels-pichot"
+        sx={{ color: "black", ml: "2rem" }}
+      >
+        Page Linkedin{" "}
+      </Link>
+      <Link
+        to="https://packaging-ecoresponsable.com/ "
+        sx={{ color: "black", ml: "2rem" }}
+      >
+        Blog : Packaging écoresponsable{" "}
+      </Link>
+      <Link to="mentions-legales " sx={{ color: "black", ml: "2rem" }}>
         {" "}
-        <Link to="https://fr.linkedin.com/company/laboratoires-industriels-pichot">
-          Page Linkedin{" "}
-        </Link>
-      </Box>
-      <Box>
-        <Link to="https://packaging-ecoresponsable.com/ ">
-          Blog : Packaging écoresponsable{" "}
-        </Link>
-      </Box>
-      <Box>
-        <Link to="mentions-legales ">Mentions Légales</Link>
-      </Box>
-      <Box>
-        <Cgv />
-      </Box>
+        Mentions Légales
+      </Link>
+
     </Box>
   </footer>
 )
 
+      // <Box sx={{ color: "black", ml: "2rem" }}>
+      //   <Cgv />
+      // </Box>
 export default Footer
