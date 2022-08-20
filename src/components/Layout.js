@@ -13,11 +13,12 @@ import { MDXProvider } from "@mdx-js/react"
 import { Link } from "gatsby-theme-material-ui"
 import Cgv from "./Cgv"
 import PageWrapper from "./PageWrapper"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Header from "./Header"
 import Footer from "./Footer"
 
-const shortcodes = { Link, Cgv, Box, Container, PageWrapper }
+const shortcodes = { Link, Cgv, Box, Container, PageWrapper, StaticImage }
 
 const Layout = ({ children }) => {
   // Destructure query return down to site:

@@ -25,6 +25,7 @@ const menuLinks = [
   { text: "Accueil", url: "/" },
   { text: "Créations de produits", url: "creations-produits" },
   { text: "L'entreprise", url: "entreprise" },
+  { text: "Nos marchés", url: "entreprise" },
   {
     text: "Cosmétiques",
     url: "cosmetiques",
