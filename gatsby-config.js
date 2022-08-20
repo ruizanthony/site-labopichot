@@ -3,9 +3,10 @@ module.exports = {
     title: `Laboratoires Pichot`,
     description: `Une entreprise française de fabrication de flacons en plastique ecoresponsables, qui intègre un service interne mouliste, situé dans le territoire Auvergne Rhone Alpes.`,
     author: `labopichot`,
-    siteUrl: `https://sitelabopichot.gtsb.io/`,
+    siteUrl: `https://flaconpet.com/`,
   },
   plugins: [
+    "gatsby-plugin-sitemap",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
@@ -67,6 +68,6 @@ module.exports = {
         path: `${__dirname}/src/articles`,
       },
     },
-    "gatsby-theme-material-ui"
+    "gatsby-theme-material-ui",
   ],
 }

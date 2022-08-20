@@ -6343,7 +6343,7 @@
     "sharp" "^0.30.7"
     "svgo" "1.3.2"
 
-"gatsby-plugin-sitemap@^5.20.0":
+"gatsby-plugin-sitemap@^5.21.0":
   "integrity" "sha512-2A4JmdOJaqOOYa/jMHFTxMixr794JFEqILL8tvYdnLM4T2xXhwbf+Y8WtsMSvi9ZQ+sK6EcZgq67j8Ni4XdH1Q=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-sitemap/-/gatsby-plugin-sitemap-5.21.0.tgz"
   "version" "5.21.0"
