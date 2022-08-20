@@ -1,33 +1,16 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby-theme-material-ui"
 import PropTypes from "prop-types"
 
 import NavBar from "./NavBar"
-import { Box } from "@mui/material"
+import { Box, Container, Grid } from "@mui/material"
 
 const Header = ({ siteTitle, siteDescription }) => (
-  <Box
-    sx={{
-      width: "100%",
-      padding: "1rem",
-      fontSize: "84%",
-      textAlign: "center",
-    }}
-  >
-    <header>
-      <div>
-        <Link to="/">
-          <img
-            src="/logo.svg" // using static folder
-            width="100"
-            height="100"
-            alt={siteTitle}
-          />
-        </Link>
-      </div>
+  <header>
+    <Box sx={{ flexGrow: 1 }}>
       <NavBar />
-    </header>
-  </Box>
+    </Box>
+  </header>
 )
 
 Header.propTypes = {

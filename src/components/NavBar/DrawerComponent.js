@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Divider, Drawer, List, ListItem, ListItemText } from "@mui/material"
-//import { Link } from "gatsby"
 
 import {
   BottomNavigationAction,
@@ -26,8 +25,7 @@ function DrawerComponent({ menuLinks }) {
                   <Link
                     to={link.url}
                     sx={{
-                      textDecoration: "none",
-                      color: "blue",
+                      color: "black",
                       fontSize: "20px",
                     }}
                   >
@@ -40,10 +38,8 @@ function DrawerComponent({ menuLinks }) {
           ))}
         </List>
       </Drawer>
-      <IconButton
-        onClick={() => setOpenDrawer(!openDrawer)}
-        sx={{ color: "white" }}
-      >
+      <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
+        Menu
         <MenuIcon />
       </IconButton>
     </>

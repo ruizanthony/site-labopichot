@@ -7,35 +7,6 @@ import { Box, Grid } from "@mui/material"
 
 const utmParameters = `?utm_source=site-labopichot&utm_medium=accueil`
 
-const links = [
-  {
-    text: "Showcase",
-    url: "showcase",
-  },
-  {
-    text: "Cosmetiques",
-    url: "cosmetiques",
-  },
-  {
-    text: "Nutrition/compléments alimentaires",
-    url: "nutrition",
-  },
-  {
-    text: "hygiêne, nettoyant, désinfection",
-    url: "hygiene",
-  },
-]
-
-const moreLinks = [
-  {
-    text: "Linkedin Labopichot",
-    url: "https://www.linkedin.com/company/10460217/admin/",
-  },
-  {
-    text: "Blog packaging ecoresponsable",
-    url: "https://packaging-ecoresponsable.com/",
-  },
-]
 const IndexPage = () => (
   <Layout>
     <Box display="flex" flexDirection="column" alignItems="stretch" padding={1}>
@@ -50,28 +21,25 @@ const IndexPage = () => (
         style={{ marginBottom: `var(--space-3)` }}
       />
       <h1>
-        Livraison en 3 semaines, plus de 1500 produits disponibles en standard,
-        creation de moules
+        Laboratoires Pichot, votre expert packaging écoresponsable, de l'idée au
+        flacon plastique recyclable et/ou recyclé, en moins de 3 semaines.
       </h1>
+      <ul>
+        <li>Livraison en 3 semaines </li>
+        <li>
+          plus de 1500 produits disponibles en standard (95% de nos produits
+          sont standards)
+        </li>
+        <li>
+          {" "}
+          création de produits avec notre service mouliste intégré pour un
+          maximum de réactivité et d'adaptabilité
+        </li>
+      </ul>
+      Avec ces trois points forts, nous avons l'ambition de devenir et rester
+      votre expert packaging écoresponsable, partenaire de vos développements et
+      de votre prise de part de marché.
     </Box>
-    <ul>
-      <Grid container spacing={3}>
-        {links.map(link => (
-          <Grid item xs={12} sm={6} md={4} key={link.text}>
-            <li key={link.url}>
-              <a href={`${link.url}${utmParameters}`}>{link.text} ↗</a>
-              <p>{link.text}</p>
-            </li>
-          </Grid>
-        ))}
-      </Grid>
-    </ul>
-    {moreLinks.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== moreLinks.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
   </Layout>
 )
 
