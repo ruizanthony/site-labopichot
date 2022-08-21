@@ -6,6 +6,30 @@ module.exports = {
     siteUrl: `https://flaconpet.com/`,
   },
   plugins: [
+    "gatsby-plugin-postcss",
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "DBP",
+        fieldName: "dbp",
+        // url: "http://server.dm.pic/graphql",
+        url: "https://server.labopi.com/graphql",
+        // HTTP headers
+        headers: {
+          // Learn about environment variables: https://gatsby.dev/env-vars
+          // Authorization: `Bearer ${process.env.GITHUB_TOKEN}`, // TODO: use netlify environment variable https://docs.netlify.com/configure-builds/environment-variables/
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW5fcm9sZSIsImV4cCI6MzE3MTk5MDg3MTEwLCJwZXJzb25faWQiOjYsImlzX2FkbWluIjp0cnVlLCJpYXQiOjE2NjExMDMxMTAsImF1ZCI6InBvc3RncmFwaGlsZSIsImlzcyI6InBvc3RncmFwaGlsZSJ9.OIhD9ugD4mjA7xCZftRyLCgr_F2PsFhoRcujy3nrXDw`,
+        },
+        // HTTP headers alternatively accepts a function (allows async)
+        // headers: async () => {
+        //   return {
+        //     Authorization: await getAuthorizationToken(),
+        //   }
+        // },
+        // Additional options to pass to node-fetch
+        fetchOptions: {},
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

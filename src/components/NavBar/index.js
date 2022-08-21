@@ -33,6 +33,8 @@ import { graphql } from "gatsby"
 
 const menuLinks = [
   { text: "Accueil", url: "/" },
+  { text: "Nos flacons", url: "/nos-flacons" },
+  { text: "Nos bouchons", url: "/nos-bouchons" },
   { text: "Créations de produits", url: "/creations-produits" },
   { text: "L'entreprise", url: "/entreprise" },
   { text: "Nos marchés", url: "/nos-marches" },
@@ -79,7 +81,9 @@ function Navbar() {
               onChange={e => changeLanguage(e.target.value)}
             >
               {languages.map(lng => (
-                <MenuItem value={lng}>{lng}</MenuItem>
+                <MenuItem key={lng} value={lng}>
+                  {lng}
+                </MenuItem>
               ))}
             </Select>
           </FormControl>

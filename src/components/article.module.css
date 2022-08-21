@@ -1,0 +1,17 @@
+.article {
+  padding-top: 1rem;
+}
+
+.article a {
+  color: inherit;
+}
+
+.article__title {
+  font-size: 110%;
+  font-weight: 500;
+}
+
+.article__meta {
+  font-family: var(--highlight-font);
+  font-size: 80%;
+}

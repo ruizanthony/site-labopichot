@@ -20,5 +20,10 @@
   "Les flacons dédiés à la nutrition/complément alimentaire": "The dedicated bottles for nutrition/food supplements",
   "Le packaging made in France": "The French packaging",
   "Le packaging, les flacons en plastique écoresponsables made in France. Creation de moules en interne. Le leader français du pack pour le complément alimentaire": "The French packaging, the sustainable plastic bottles made in France. In-house mold making capabilities. The French leader in the food supplement packaging",
-  "test": "it works!"
+  "FlaconPageTitle": "Sustainable plastic bottles made in France",
+  "FlaconPageDescription": "More than 1500 products available as standard. The number of times a product has been produced over the past 4 years tells you if the product is active in the market",
+  "FlaconPageImage": "/images/flacons.jpg",
+  "BouchonPageTitle": "Closures adapted to the plastic bottles we produce.",
+  "BouchonPageDescription": "One stop shopping. All the closures that we propose are tested and validated with the plastic bottles we produce. There won't be any leaking or screwing issues if you choose the whole pack from Labopichot. This is part of our commitment to quality.",
+  "BouchonPageImage": "/images/bouchons.jpg"
 }
